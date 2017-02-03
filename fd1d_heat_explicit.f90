@@ -107,15 +107,7 @@ program fd1d_heat_explicit_prb
 
     contains
 
-    function func( j, x_num, x ) result ( d )
-      implicit none
-      
-      integer(kind=SI), intent(in) :: j, x_num
-      real(kind=DP) :: d
-      real(kind=DP), intent(in) :: x(x_num)
-
-      d = 0.0_DP
-    end function func
+    use RHS_mod
 
     subroutine fd1d_heat_explicit( x_num, x, t, dt, cfl, h, h_new )
       implicit none
