@@ -137,8 +137,9 @@ program fd1d_heat_explicit_prb
       h_new(1) = 90.0_DP
       h_new(x_num) = 70.0_DP
     end subroutine fd1d_heat_explicit
-
-
+ 
+    use CFL_mod
+    
     subroutine r8mat_write( output_filename, m, n, table )
       implicit none
 
