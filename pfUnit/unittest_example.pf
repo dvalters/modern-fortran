@@ -1,0 +1,15 @@
+! test driver is a pseudo code that tests your functions
+! and subroutines.
+
+@test
+subroutine testCode()
+  use pFUnit_mod    ! required
+  use test_mod      ! contains subroutine to be tested
+
+  real :: result2, tol = 0.00001
+
+  call Riemann( 2.0, 1.0, result2)   ! Riemann is in test_mod
+
+  @assertEqual( result2, 3.5, tol )  ! abs( result2 - 3.5 ) <= tol
+
+end subroutine testCode
