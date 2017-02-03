@@ -25,7 +25,7 @@ program fd1d_heat_explicit_prb
       real(kind=DP), dimension(:), allocatable :: x!(1:x_num)
       real(kind=DP) :: x_max
       real(kind=DP) :: x_min
-      allocate(h(x_num), h_new(x_num), hmat(x_num, t_num), t(t_num), x(x_num))
+      allocate(h(1:x_num), h_new(1:x_num), hmat(1:x_num, 1:t_num), t(1:t_num), x(1:x_num))
       
       write ( *, '(a)' ) ' '
       write ( *, '(a)' ) 'FD1D_HEAT_EXPLICIT_PRB:'
@@ -102,6 +102,8 @@ program fd1d_heat_explicit_prb
       call r8mat_write( 'h_test01.txt', x_num, t_num, hmat )
       call r8vec_write( 't_test01.txt', t_num, t )
       call r8vec_write( 'x_test01.txt', x_num, x )
+
+    deallocate(h, h_new, hmat, t, x)
 
     contains
 
@@ -231,7 +233,6 @@ program fd1d_heat_explicit_prb
       close ( unit = output_unit )
   end subroutine r8vec_write
   
-  deallocate(h, h_new, hmat, t, x)  
 
 end program fd1d_heat_explicit_prb
 
