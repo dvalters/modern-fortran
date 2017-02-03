@@ -17,6 +17,7 @@ module coarrays
     sync all
 
     call axpy(n_I, a_I, X_I, X_I, Y_I, Z_I)
+    sync all 
 
     if (this_image() == 1 ) then
       do i = 1, num_images()
