@@ -1,6 +1,8 @@
 # modern-fortran
 Code and notes from the Fortran Modernisation workshop 
 
+https://www.nag.co.uk/content/fortran-modernization-workshop
+
 ## References
 
 * _The Art of Readable Code_, D. Boswell and T. Foucher. O’Reilly, 2011;
